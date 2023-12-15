@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
 
-
+    @livewireStyles
 </head>
 
 <body>
@@ -28,10 +28,11 @@
             <h2 class="text-right mr-20">Total Student : <span class=" text-red-600 text-[20px]">{{$student_count}}</span></h2>
         </div>
         <div>
-            <a href="{{route('student-create')}}">
-                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Create a student</button>
+            <a href="{{route('student-export')}}">
+                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Spatie Export</button>
             </a>
         </div>
+        @livewire('export')
     @if($students != null)
         <div class="relative overflow-x-auto mt-6">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -106,7 +107,7 @@
         });
         
     </script>
-
+    @livewireScripts
 </body>
 
 </html>

@@ -23,5 +23,6 @@ Route::prefix('student')->group(function(){
     Route::get('/create', [StudentController::class, 'create'])->name('student-create');
     Route::post('/store', [StudentController::class, 'store'])->name('student-store');
     Route::delete('/{student}}', [StudentController::class, 'destory'])->name('student-delete');
+    Route::get('/export}', [StudentController::class, 'exportStudent'])->name('student-export');
 });
 

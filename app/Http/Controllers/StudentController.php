@@ -6,6 +6,7 @@ use App\Http\Requests\StoreStudentRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Spatie\SimpleExcel\SimpleExcelWriter;
 
 class StudentController extends Controller
 {
@@ -49,4 +50,25 @@ class StudentController extends Controller
             'status' => 200,
         ], 200);
     }
+
+    public function exportStudent()
+    {
+        $rows = [];
+
+        Student::chunk(100, function ($students) use (&$rows) {
+            foreach ($students->toArray() as $student) {
+                $rows[] = $student;
+            }
+        });
+
+        // Check if there are any rows before initiating the download
+        if (!empty($rows)) {
+            SimpleExcelWriter::streamDownload(downloadName: 'students.csv')
+                ->addRows($rows);
+        } else {
+            // Handle the case where there are no students to export
+            return response()->json(['message' => 'No students to export.']);
+        }
+    }
+
 }

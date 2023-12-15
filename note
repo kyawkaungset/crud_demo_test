@@ -1,0 +1,60 @@
+1.form from flowbite
+2.input types
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
+3.validation rules
+'name' => 'required'
+'username' => 'unique:users'
+'age' => 'numeric'
+'quantity' => 'integer'
+'title' => 'string'
+'email' => 'email'
+'password' => 'min:8'
+'height' => 'max:100'
+'status' => 'not_in:pending'
+'birth_date' => 'date'
+'options' => 'array'
+'profile_picture' => 'image'
+'photo' => 'file'
+'is_active' => 'boolean'
+'optional_field' => 'nullable|string'
+'password' => 'confirmed'
+'role' => 'in:admin,user,editor'
+'age' => 'between:18,60'
+'date' => 'date_format:Y-m-d'
+'password' => 'different:username'
+'pin' => 'digits:4'
+'phone' => 'digits_between:10,12'
+'avatar' => 'dimensions:min_width=100,min_height=200'
+'price' => 'gt:discounted_price'
+'quantity' => 'gte:min_quantity'
+'ip_address' => 'ip'
+'ipv4_address' => 'ipv4'
+'ipv6_address' => 'ipv6'
+'data' => 'json'
+'discounted_price' => 'lt:original_price'
+'available_quantity' => 'lte:max_quantity'
+
+4.tailwind pagination
+- need to configue in tailwind.congfig.js for pagination

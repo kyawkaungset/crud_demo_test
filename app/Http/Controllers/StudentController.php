@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStudentRequest;
+use App\Imports\StudentImport;
 use App\Models\Student;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Maatwebsite\Excel\Facades\Excel;
+use Spatie\SimpleExcel\SimpleExcelReader;
 use Spatie\SimpleExcel\SimpleExcelWriter;
 
 class StudentController extends Controller
@@ -69,6 +73,12 @@ class StudentController extends Controller
             // Handle the case where there are no students to export
             return response()->json(['message' => 'No students to export.']);
         }
+    }
+
+    public function importStudent(Request $request)
+    {
+        Excel::import(new StudentImport, request()->file('file'));
+        return redirect()->route('student-index')->with('success', 'Imported Successfully!');
     }
 
 }

@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [StudentController::class, 'index']);
 
 Route::prefix('student')->group(function(){
     Route::get('/list', [StudentController::class, 'index'])->name('student-index');
@@ -24,5 +22,6 @@ Route::prefix('student')->group(function(){
     Route::post('/store', [StudentController::class, 'store'])->name('student-store');
     Route::delete('/{student}}', [StudentController::class, 'destory'])->name('student-delete');
     Route::get('/export}', [StudentController::class, 'exportStudent'])->name('student-export');
+    Route::post('/import}', [StudentController::class, 'importStudent'])->name('student-import');
 });
 

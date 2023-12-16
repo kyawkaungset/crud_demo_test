@@ -9,6 +9,10 @@
     
     <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}" />
+    <script src="{{ asset('js/fontawesome.js') }}"></script>
 
     @livewireStyles
 </head>
@@ -20,6 +24,11 @@
             
         </div>
         <div>
+            <a href="{{url('/telescope')}}">
+                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900"><i class="fa-brands fa-searchengin"></i>Laravel Telescope</button>
+            </a>
+        </div>
+        <div>
             <a href="{{route('student-create')}}">
                 <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Create a student</button>
             </a>
@@ -27,12 +36,27 @@
         <div>
             <h2 class="text-right mr-20">Total Student : <span class=" text-red-600 text-[20px]">{{$student_count}}</span></h2>
         </div>
+
+        {{-- export with spatie sample excel --}}
         <div>
             <a href="{{route('student-export')}}">
-                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Spatie Export</button>
+                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-orange-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Spatie Export</button>
             </a>
         </div>
+        {{-- export with Laravel Job and Livewire --}}
         @livewire('export')
+
+        <div class="mt-8 mx-4">
+            <span class="text-lg font-bold">Laravel Excel Import</span>
+            <form action="{{ route('student-import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <input type="file" name="file" required>
+
+                <x-button>Import</x-button>
+            </form>
+        </div>
+
     @if($students != null)
         <div class="relative overflow-x-auto mt-6">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

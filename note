@@ -78,3 +78,6 @@ php artisan make:job ExportJob
 ExportJob.php 
 php artisan make:export StudentsExport
 StudentsExport
+
+7.added softdelete
+8.added activityLogss

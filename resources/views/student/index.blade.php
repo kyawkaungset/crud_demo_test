@@ -25,12 +25,12 @@
         </div>
         <div>
             <a href="{{url('/telescope')}}">
-                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900"><i class="fa-brands fa-searchengin"></i>Laravel Telescope</button>
+                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2"><i class="fa-brands fa-searchengin"></i>Laravel Telescope</button>
             </a>
         </div>
         <div>
             <a href="{{route('student-create')}}">
-                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Create a student</button>
+                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2">Create a student</button>
             </a>
         </div>
         <div>
@@ -40,7 +40,7 @@
         {{-- export with spatie sample excel --}}
         <div>
             <a href="{{route('student-export')}}">
-                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-orange-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2 dark:bg-bule-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Spatie Export</button>
+                <button type="button" class="mx-4 mt-4 px-2 py-1focus:outline-none text-white bg-orange-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-1 me-2 mb-2">Spatie Export</button>
             </a>
         </div>
         {{-- export with Laravel Job and Livewire --}}
@@ -59,8 +59,8 @@
 
     @if($students != null)
         <div class="relative overflow-x-auto mt-6">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                         </th>

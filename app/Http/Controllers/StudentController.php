@@ -28,8 +28,8 @@ class StudentController extends Controller
                 'student_count' => $student_count,
             ]);
         }
-        
-        $students = Student::paginate(7);
+
+        $students = Student::orderByDesc('id')->paginate(7);
         $student_count = count(Student::all());
         return view('student.index', compact('students', 'student_count'));
     }
